@@ -1,0 +1,45 @@
+.my-input {
+    background: none;
+    outline: none;
+    border: none;
+    position: relative;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; //块元素显示的文本行数
+    -webkit-box-orient: vertical;
+  //  border-radius: 5px;
+    padding: 3px 10px;
+    font-size: 13px;
+    color: #696969;
+    border: solid 1px transparent;
+    resize: none;
+    width: 100px;
+    height: 30px;
+    line-height: 26px;
+    background-color: rgba($color: #bfbfbf, $alpha: 0.3);
+    &:hover {
+        background-color: rgba($color: #bfbfbf, $alpha: 0.88);
+        // outline: #EEE9E9 solid 1px;
+      //  border-color: #eee9e9;
+    }
+    &:focus {
+        border-color: transparent;
+        background-color: white;
+        box-shadow: inset 0px 0px 18px 10px #eee9e9;
+    }
+}
+
+.measure {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: inline-block;
+    word-wrap: break-word;
+    word-break: normal;
+    width: auto;
+    min-width: 100px;
+    min-height: 30px;
+    padding: 3px;
+    font-size: 13px;
+    border: solid 1px transparent;
+    visibility: hidden;
+}

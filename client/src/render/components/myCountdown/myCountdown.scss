@@ -1,0 +1,37 @@
+.my-countdown {
+    position: relative;
+    display: inline-block;
+    font-family: Arial;
+    line-height: 1;
+    color: white;
+    font-size: 90px;
+    transform-origin: 50% 50%;
+
+    &.large {
+        transform: scale(1);
+    }
+    &.middle {
+        transform: scale(0.6);
+    }
+    &.small {
+        transform: scale(0.3);
+    }
+
+    .num-head {
+        position: relative;
+        width: 100px;
+        height: 90px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+    }
+
+    .num-tail {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100px;
+        height: 90px;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+    }
+}

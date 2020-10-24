@@ -1,0 +1,431 @@
+body {
+    background-color: rgba($color: #212129, $alpha: 0.9);
+    font-family: "Open Sans", Arial, Verdana;
+    font-size: 15px;
+}
+
+.loginAndRegister {
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    .loginAndRegister-nav {
+        .narrow-but,
+        .close-but {
+            -webkit-app-region: no-drag;
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .narrow-but {
+            top: 0;
+            right: 20px;
+            &:hover {
+                background-color: #91d5ff;
+            }
+        }
+        .close-but {
+            top: 0;
+            right: 0;
+            &:hover {
+                background-color: #ff4d4f;
+            }
+        }
+    }
+
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50vh;
+        background-color: #d9d9d9;
+        transform: skewY(5deg);
+        z-index: 0;
+        &::before {
+            position: absolute;
+            top: -39px;
+            right: 0;
+            content: "";
+            width: 100%;
+            height: 40px;
+            background-color: #d9d9d9;
+        }
+    }
+}
+
+%input-form {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    input {
+        width: 100%;
+        height: 100%;
+        padding: 5px 5px 5px 40px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #8c8c8c;
+        background-color: #95de64;
+        &::placeholder {
+            color: #8c8c8c;
+        }
+        &:focus + label::before {
+            width: 100%;
+        }
+        &:focus + label::after {
+            width: 100%;
+        }
+    }
+    label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background-color: lighten($color: #b7eb8f, $amount: 12%);
+            transition: width ease-in-out 0.4s;
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background-color: lighten($color: #b7eb8f, $amount: 12%);
+            transition: width ease-in-out 0.4s;
+        }
+    }
+    .content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 5px 5px 5px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+%submit {
+    align-self: flex-start;
+    margin-top: 20px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: 0 50px 50px 0;
+    border-left: none !important;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    &:active {
+        transform: scale(0.8);
+    }
+}
+
+.partition {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px);
+    z-index: 1;
+}
+
+.login {
+    -webkit-app-region: no-drag;
+    position: relative;
+    width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100px);
+    background-color: #73d13d;
+    filter: blur(0);
+    transition: filter 0.5s;
+    z-index: 1;
+    h1 {
+        color: #b7eb8f;
+        letter-spacing: 20px;
+        margin-left: 20px;
+    }
+    .input-form {
+        @extend %input-form;
+    }
+    .weri-code {
+        input {
+            padding: 5px 40px;
+        }
+        .icon2,
+        .icon3 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .icon2:hover {
+            background-color: white;
+        }
+    }
+    .submit {
+        @extend %submit;
+        border: #95de64 solid 1px;
+    }
+}
+
+.register {
+    -webkit-app-region: no-drag;
+    position: relative;
+    width: 300px;
+    height: 490px;
+    transform: translateX(-100px);
+    z-index: 0;
+    #but-close,
+    #but-open {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        transition: transform 0.4s;
+        z-index: 9;
+        &::before {
+            position: absolute;
+            top: 9px;
+            right: 0px;
+            content: "";
+            width: 20px;
+            height: 2px;
+            background-color: white;
+        }
+        &::after {
+            position: absolute;
+            top: 0px;
+            right: 9px;
+            content: "";
+            width: 2px;
+            height: 20px;
+            background-color: white;
+        }
+    }
+    #but-close {
+        visibility: hidden;
+    }
+    .register-entry {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #bae7ff;
+        filter: blur(5px);
+        //box-shadow: 5px 14px 20px 0 lighten(#bae7ff, 10%);
+        transition: filter 0.5s;
+        h1 {
+            color: #e6f7ff;
+            letter-spacing: 20px;
+            margin-left: 20px;
+        }
+        .input-form {
+            @extend %input-form;
+            input {
+                background-color: #e6f7ff;
+            }
+            label {
+                &::before {
+                    background-color: lighten($color: #69c0ff, $amount: 12%);
+                }
+                &::after {
+                    background-color: lighten($color: #69c0ff, $amount: 12%);
+                }
+            }
+            .content {
+                background-color: #e6f7ff;
+            }
+        }
+        .weri-code {
+            input {
+                padding: 5px 40px;
+            }
+            .icon2,
+            .icon3 {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+            .icon2:hover {
+                background-color: white;
+            }
+        }
+        .submit {
+            @extend %submit;
+            border: #95de64 solid 1px;
+        }
+    }
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[id="open-register"]:checked {
+    ~ .login {
+        animation: close-login 0.8s forwards;
+        filter: blur(5px);
+    }
+    ~ .register {
+        animation: open-register 0.8s forwards;
+        > .register-entry {
+            filter: blur(0);
+        }
+    }
+    ~ .register #but-open {
+        visibility: hidden;
+        transform: rotate(45deg);
+    }
+    ~ .register #but-close {
+        visibility: visible;
+        transform: rotate(45deg);
+    }
+}
+
+input[id="open-login"]:checked {
+    ~ .login {
+        animation: open-login 0.8s forwards;
+        //filter: blur(0);
+    }
+    ~ .register {
+        animation: close-register 0.8s forwards;
+        // > .register-entry {
+        //     filter: blur(5px);
+        // }
+    }
+    ~ .register #but-open {
+        visibility: visible;
+        transform: rotate(0deg);
+    }
+    ~ .register #but-close {
+        visibility: hidden;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes open-register {
+    0% {
+        transform: translateX(-100px);
+        z-index: 0;
+    }
+    50% {
+        transform: translateX(105px);
+    }
+    100% {
+        transform: translateX(-100px);
+        z-index: 1;
+    }
+}
+
+@keyframes close-login {
+    0% {
+        transform: translateX(100px);
+        z-index: 1;
+    }
+    50% {
+        transform: translateX(-105px);
+    }
+    100% {
+        transform: translateX(100px);
+        z-index: 0;
+    }
+}
+
+@keyframes open-login {
+    0% {
+        transform: translateX(100px);
+        z-index: 0;
+    }
+    50% {
+        transform: translateX(-105px);
+    }
+    100% {
+        transform: translateX(100px);
+        z-index: 1;
+    }
+}
+
+@keyframes close-register {
+    0% {
+        transform: translateX(-100px);
+        z-index: 1;
+    }
+    50% {
+        transform: translateX(105px);
+    }
+    100% {
+        transform: translateX(-100px);
+        z-index: 0;
+    }
+}
+
+.login-method {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #f0f0f0;
+
+    & > span {
+        transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:active {
+            transform: scale(0.8);
+        }
+    }
+}

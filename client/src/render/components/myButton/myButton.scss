@@ -1,0 +1,48 @@
+$fuschia: #ff0081;
+$button-bg: $fuschia;
+$button-text-color: #fff;
+
+button {
+    font-family: "Helvetica", "Arial", sans-serif;
+    display: inline-block;
+    font-size: 1em;
+    padding: 0.25em 0.8em;
+    appearance: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    color: $button-text-color;
+    &:focus {
+        outline: 0;
+    }
+    transition: transform ease-in 0.1s;
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+.default {
+    background-color: $button-bg;
+    transition: box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+
+    &:active {
+        background-color: darken($button-bg, 5%);
+        box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+    }
+}
+
+.frame {
+    border: solid $button-bg 1px;
+    border-style: solid;
+    border-color: $button-bg;
+    border-width: 1px;
+    color: $button-bg;
+    transition: transform ease-in 0.1s, border-color ease-in 0.25s, color ease-in 0.25s;
+    &:active {
+        transform: scale(0.9);
+        border-color: darken($button-bg, 5%);
+        color: darken($button-bg, 5%);
+    }
+}

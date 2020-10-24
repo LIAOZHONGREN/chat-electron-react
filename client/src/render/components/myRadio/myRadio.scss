@@ -1,0 +1,39 @@
+.my-radio {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid #bae7ff 10px;
+    border-radius: 10px;
+    opacity: 1;
+    transition: all 0.3s cubic-bezier(0, 0.105, 0.035, 1.57);
+}
+
+.radio-hoop {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: solid #69c0ff 3px;
+    box-shadow: 0 2px 25px rgba($color: #69c0ff, $alpha: 0.5);
+    border-radius: 10px;
+    transform: scale(0);
+    transition: all 0.3s cubic-bezier(0, 0.105, 0.035, 1.57);
+}
+
+.my-radio.active {
+    .radio-hoop {
+        transform: scale(1);
+    }
+    .radio-center{
+        opacity: 0;
+    }
+}
+
+

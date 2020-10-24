@@ -1,0 +1,62 @@
+.video-call {
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.no-dragging,
+.local-video,
+.remote-video {
+    //   -webkit-app-region: no-drag;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 192px;
+    height: 108px;
+    z-index: 2;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    &.main-screen {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}
+.no-dragging {
+    height: 108px;
+    -webkit-app-region: no-drag;
+}
+
+.call-control-col {
+    -webkit-app-region: no-drag;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    z-index: 99;
+    color: #fff;
+    & table {
+        transform: translateY(60px);
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    & tr {
+        display: flex;
+        flex-direction: row;
+    }
+    & td {
+        height: 60px;
+        width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.video-call.show-call-control-col {
+    & table {
+        transform: translateY(0px);
+    }
+}

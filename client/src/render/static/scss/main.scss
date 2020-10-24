@@ -1,0 +1,45 @@
+
+html,
+body,
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  user-select: none;//禁止选择文字复制
+}
+
+body{
+  background-color: rgba($color: #212129, $alpha: 0.9);
+  font-family: Arial;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+input {
+  border: 0;
+}
+input:focus,
+button:focus {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  right: 5px;
+  width: 0;
+}
+// .scrollbar::-webkit-scrollbar-button:start {
+//   background-color:rgba(0,0,0,0.3);
+//   background-size: 5px 33px;
+// }
+::-webkit-scrollbar-track {
+  z-index: 0;
+}
+::-webkit-scrollbar-track-piece{
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 2.5px;
+  background: rgba($color: #000000, $alpha: 0.3);
+}

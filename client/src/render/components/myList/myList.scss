@@ -1,0 +1,147 @@
+.my-list {
+    -webkit-app-region: no-drag;
+    position: relative;
+    &.downLoading {
+        & .down-loading {
+            visibility: visible;
+        }
+    }
+    &.upLoading {
+        & .up-loading {
+            visibility: visible;
+        }
+    }
+    &.leftLoading {
+        & .left-loading {
+            visibility: visible;
+        }
+    }
+    &.rightLoading {
+        & .right-loading {
+            visibility: visible;
+        }
+    }
+}
+
+.my-list-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &.vertical {
+        overflow-x: hidden;
+        overflow-y: overlay;
+        &:hover::-webkit-scrollbar {
+            width: 5px;
+        }
+    }
+
+    &.horizontal {
+        display: flex;
+        flex-direction: row;
+        white-space: nowrap;
+        & * {
+            flex-shrink: 0;
+        }
+        overflow-x: overlay;
+        overflow-y: hidden;
+        &::-webkit-scrollbar {
+            height: 0px;
+        }
+        &:hover::-webkit-scrollbar {
+            height: 6px;
+        }
+    }
+}
+
+.down-loading,
+.up-loading {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 99;
+    visibility: hidden;
+}
+.up-loadingg {
+    top: 0;
+}
+.down-loading {
+    bottom: 0;
+}
+
+.left-loading,
+.right-loading {
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    z-index: 99;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-loading {
+    left: 0;
+}
+.right-loading {
+    right: 0;
+}
+
+$lite: #fff;
+$brand: #ff3d00;
+$size: 25px;
+$borderSize: 1.5px;
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+.loader-11 {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: $borderSize solid;
+    border-color: $lite $lite transparent transparent;
+    animation: rotation 0.6s linear infinite;
+    &:after,
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border: $borderSize solid;
+        border-color: transparent transparent $brand $brand;
+        width: $size - 8px;
+        height: $size - 8px;
+        border-radius: 50%;
+        animation: rotationBack 0.3s linear infinite;
+        transform-origin: center center;
+    }
+    &:before {
+        width: $size - 16px;
+        height: $size - 16px;
+        border-color: $lite $lite transparent transparent;
+        animation: rotation 0.9s linear infinite;
+    }
+}

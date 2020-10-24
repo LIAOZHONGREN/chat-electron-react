@@ -1,0 +1,86 @@
+$bodybackgroup: rgba(
+    $color: #212129,
+    $alpha: 0.9,
+);
+
+body {
+   background-color: rgba(0, 0, 0, 0);
+    font-family: "Open Sans", Arial, Verdana;
+    font-size: 15px;
+}
+
+.identity-search {
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: $bodybackgroup;
+    border-radius: 4px;
+}
+
+.close-window {
+    -webkit-app-region: no-drag;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    z-index: 99;
+    &:hover {
+        color: #ff4d4f;
+    }
+}
+
+.identity-search-input {
+    -webkit-app-region: no-drag;
+    position: relative;
+    width: calc(100% - 5px);
+    height: 45px;
+}
+
+.identity-search-modal-result {
+    -webkit-app-region: no-drag;
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    flex-grow: 1;
+    overflow-y: overlay;
+    overflow-x: hidden;
+    &:hover::-webkit-scrollbar {
+        width: 5px;
+    }
+    .username {
+        max-width: calc(380px - 85px);
+        height: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 16px;
+        line-height: 25px;
+        font-weight: 500;
+    }
+}
+
+.verify-info-input {
+    -webkit-app-region: no-drag;
+    position: relative;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancel-submit {
+    -webkit-app-region: no-drag;
+    position: absolute;
+    bottom: 0;
+    right: 17px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+}

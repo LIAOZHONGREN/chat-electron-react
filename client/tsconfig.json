@@ -1,0 +1,16 @@
+
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "allowSyntheticDefaultImports": true, // 允许自动合成 import * as React from 'react'
+    "moduleResolution": "Node", // import {} from '@ant-design/icon'
+    "allowJs": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@root/*": ["./*"],
+      "@main/*": ["src/marin/*"],
+      "@render/*": ["src/render/*"],
+    }
+  },
+}

@@ -1,0 +1,88 @@
+.voice-call {
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.headimg-and-name {
+    position: relative;
+    width: 100%;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .headimg {
+        margin: 10px;
+    }
+    .name {
+        position: relative;
+        width: 100%;
+        height: 30px;
+        padding: 0 5px;
+        line-height: 30px;
+        text-align: center;
+        font-size: 15px;
+        color: #f0f0f0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.handle-buts {
+    -webkit-app-region: no-drag;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    justify-content: center;
+}
+
+.volume {
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    & .one,
+    & .two,
+    & .three,
+    & .four {
+        position: absolute;
+        bottom: 15px;
+        left: 140px;
+        border-width: 2px 2px 0 0;
+        border-radius: 0 100% 0 0;
+        border-style: solid;
+        border-color: azure;
+        opacity: 0;
+        transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &.show {
+            opacity: 1;
+        }
+    }
+    & .one {
+        width: 5px;
+        height: 5px;
+    }
+    & .two {
+        width: 10px;
+        height: 10px;
+    }
+    & .three {
+        width: 15px;
+        height: 15px;
+    }
+    & .four {
+        width: 20px;
+        height: 20px;
+    }
+}

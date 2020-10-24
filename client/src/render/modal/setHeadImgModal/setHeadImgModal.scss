@@ -1,0 +1,46 @@
+$bodybackgroup: rgba(
+    $color: #212129,
+    $alpha: 0.9,
+);
+
+body {
+    background-color: $bodybackgroup;
+    font-family: "Open Sans", Arial, Verdana;
+    font-size: 15px;
+}
+
+.modal-win {
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.close-window {
+    -webkit-app-region: no-drag;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    z-index: 99;
+    &:hover {
+        color: #ff4d4f;
+    }
+}
+
+.capture-area {
+    -webkit-app-region: no-drag;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    display: inline-flex;
+    justify-content: center;
+}

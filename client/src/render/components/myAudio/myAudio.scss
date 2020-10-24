@@ -1,0 +1,135 @@
+$fontColor: #e6f7ff;
+
+.my-audio {
+    position: relative;
+    width: 250px;
+    height: 60px;
+    border-radius: 5px;
+   // background-color: rgba(0, 0, 0, 0.3);
+}
+
+@keyframes rotate-turntable {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+.audio-turntable {
+    position: absolute;
+    top: -30px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.4);
+    &.rotate {
+        animation: rotate-turntable 13s linear infinite;
+    }
+    &.paused {
+        animation-play-state: paused;
+    }
+}
+
+.audio-progress-bar {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: calc(100% - 10px);
+    height: 3px;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    cursor: pointer;
+    .audio-progress2,
+    .audio-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: #91d5ff;
+        transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+}
+
+.audio-time,
+.audio-time-progress {
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    bottom: 10px;
+    font-size: 10px;
+    color: $fontColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.audio-time {
+    right: 5px;
+}
+.audio-time-progress {
+    left: 5px;
+}
+
+.audio-action {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 180px;
+    height: 20px;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .audio-action-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale(1);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+    // .audio-speed-control {
+    //     margin-left: 10px;
+    //     .speed-show {
+    //         position: absolute;
+    //         width: 20px;
+    //         height: 15px;
+    //         top: 50%;
+    //         left: 160%;
+    //         margin: -7.5px 0 0 -10px;
+    //         transform-origin: 50% 50%;
+    //         transform: scale(0);
+    //         border-radius: 2px;
+    //         background-color:#A9A9A9;
+    //         transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    //         color: $fontColor;
+    //     }
+    //     &:hover .speed-show {
+    //         transform-origin: 50% 50%;
+    //         transform: scale(1);
+    //     }
+    // }
+}
+
+.audio-name {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 180px;
+    height: 20px;
+    padding: 0 5px;
+    line-height: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: $fontColor;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

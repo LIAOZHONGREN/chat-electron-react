@@ -1,0 +1,127 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "main": "src/main/bundle.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently -n=react,electron -c=blue,green \"npm run dev:react\" \"npm run dev:electron\"",
+    "dev:react": "node scripts/render-start",
+    "dev:electron": "node scripts/main-build --env=development --watch",
+    "build-win": "node scripts/render-build && node scripts/main-build --env=production && electron-builder -w",
+    "rebuild": "electron-rebuild -f -w yourmodule"
+  },
+  "build": {
+    "files": [
+      "!node_modules",
+      "src/main",
+      "src/dist"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ],
+      "artifactName": "${productName}_setup_${version}.${ext}"
+    },
+    "directories": {
+      "output": "release"
+    },
+    "extends": null,
+    "productName": "chat",
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false
+    },
+    "extraResources": {
+      "from": "src/main/resources/",
+      "to": "./"
+    }
+  },
+  "keywords": [
+    "electron",
+    "react",
+    "typescript",
+    "webpack"
+  ],
+  "dependencies": {
+    "@ant-design/icons": "^4.1.0",
+    "animejs": "^3.2.0",
+    "antd": "^4.2.2",
+    "axios": "^0.19.2",
+    "browser-md5-file": "^1.1.1",
+    "chroma-js": "^2.1.0",
+    "core-js": "^3.6.5",
+    "fabric": "^4.2.0",
+    "ffi-napi": "^3.0.1",
+    "image-editor-little": "^0.1.5",
+    "lodash": "^4.17.20",
+    "lowdb": "^1.0.0",
+    "minio": "^7.0.16",
+    "mtils": "^2.0.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-zmage": "^0.8.5-beta.36",
+    "recorder-core": "^1.1.20062600",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "ref-napi": "^3.0.1",
+    "socket.io-client": "^2.3.0",
+    "winreg": "^1.2.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/animejs": "^3.1.1",
+    "@types/axios": "^0.14.0",
+    "@types/electron": "^1.6.10",
+    "@types/fabric": "^3.6.8",
+    "@types/ffi-napi": "^2.4.3",
+    "@types/lowdb": "^1.0.9",
+    "@types/minio": "^7.0.6",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.7",
+    "@types/redux": "^3.6.0",
+    "@types/ref-napi": "^1.4.1",
+    "@types/socket.io-client": "^1.4.33",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-import": "^1.13.0",
+    "chalk": "^4.0.0",
+    "chokidar": "^3.4.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^5.2.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.5.3",
+    "dotenv": "^8.2.0",
+    "electron": "^10.1.4",
+    "electron-builder": "^22.6.0",
+    "electron-connect": "^0.6.3",
+    "electron-is-dev": "^1.2.0",
+    "electron-rebuild": "^2.2.0",
+    "eslint": "^7.0.0",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "lowdb": "^1.0.0",
+    "minimist": "^1.2.5",
+    "node-sass": "^4.14.1",
+    "ora": "^4.0.4",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
+    "wait-on": "^5.0.0",
+    "webpack": "^4.43.0",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
+  }
+}
