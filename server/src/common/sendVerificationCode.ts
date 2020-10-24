@@ -1,6 +1,6 @@
 import { Client } from './redis'
 import logger from './logger'
-const mtils = require('mtils')
+import { Random } from '../common/random'
 const nodeMailer = require('nodemailer')
 
 const fromMailer = '3167476587@qq.com'
@@ -20,7 +20,7 @@ export interface IVerificationInfo {
 }
 
 export function SendVerificationCode(toMailer: string): Promise<any> {
-    const vCode = mtils.security.random(6) + ''
+    const vCode = Random(6) + ''
     const mailOptions = {
         from: fromMailer,    //发件箱
         to: toMailer,     //收件箱地址
