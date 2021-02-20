@@ -42,6 +42,24 @@
  * 截图(截取屏幕是通过调用golang编写的dll实现,截图编辑使用了fabric.js)  
 
 #项目演示图片:
-<img alt="演示截图" src="./demoPicture/登录.jpg"/>
+<img alt="注册" src="./demoPicture/注册.png"/>
+<img alt="登录" src="./demoPicture/登录.jpg"/>
+<img alt="聊天界面1" src="./demoPicture/聊天界面1.png"/>
+<img alt="聊天界面2" src="./demoPicture/聊天界面2.png"/>
+<img alt="聊天界面3" src="./demoPicture/聊天界面3.png"/>
+<img alt="聊天界面4" src="./demoPicture/聊天界面4.png"/>
+<img alt="电话拨打" src="./demoPicture/电话拨打.png"/>
+<img alt="视频拨打" src="./demoPicture/视频拨打.png"/>
+<img alt="截图" src="./demoPicture/截图.png"/>
+<img alt="好友详情" src="./demoPicture/好友详情.png"/>
+<img alt="群聊详情" src="./demoPicture/群聊详情.png"/>
+<img alt="创建群聊" src="./demoPicture/创建群聊.png"/>
+<img alt="修改群名" src="./demoPicture/修改群名.png"/>
+<img alt="退出群聊" src="./demoPicture/退出群聊.png"/>
+<img alt="踢出群聊" src="./demoPicture/踢出群聊.png"/>
+<img alt="头像设置1" src="./demoPicture/头像设置1.png"/>
+<img alt="头像设置2" src="./demoPicture/头像设置2.png"/>
+<img alt="音乐播放" src="./demoPicture/音乐播放.jpg"/>
+<img alt="视频播放" src="./demoPicture/视频播放.png"/>
   
  # 代码并不完美,请多见谅
